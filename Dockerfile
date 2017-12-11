@@ -1,6 +1,6 @@
-FROM python:latest
+FROM golang:latest
 COPY . /usr/src/app
 WORKDIR /usr/src/app
-RUN python3 -m venv flask
-RUN flask/bin/pip3 install -r requirements.txt
-CMD flask/bin/python3 payment.py
+RUN go get -u github.com/gorilla/mux
+RUN go get -u gopkg.in/mgo.v2
+CMD go run payment.go
