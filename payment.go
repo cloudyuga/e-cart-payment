@@ -27,7 +27,7 @@ const DBNAME = "paymentDb"
 const DOCNAME = "payment"
 
 type Order struct {
-  OrderId int
+  OrderId int `json:"orderId"`
 }
 
 type Payment struct {
